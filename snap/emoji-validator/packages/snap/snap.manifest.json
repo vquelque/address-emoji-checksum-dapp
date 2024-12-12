@@ -1,0 +1,24 @@
+{
+  "version": "1.0.2",
+  "description": "Panicking when sending crypto funds? This Snap provides an easy-to-read checksum composed of 4 curated emoji characters to confirm you're sending funds to the right address!",
+  "proposedName": "Address Emoji Checksum",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vquelque/emoji-address.git"
+  },
+  "source": {
+    "shasum": "EUIG/ZXJ12M8jNN+awKVetcK01ah126qFb//U8HbnT8=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "emoji-checksum-snap",
+        "registry": "https://registry.npmjs.org/",
+        "iconPath": "resources/logo.svg"
+      }
+    }
+  },
+  "initialPermissions": {
+    "endowment:transaction-insight": {}
+  },
+  "manifestVersion": "0.1"
+}
