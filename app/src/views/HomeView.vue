@@ -4,11 +4,13 @@ import { generateEmojiChecksum, validateAddress } from 'address-emoji-checksum'
 import InstallSnapButton from '@/components/InstallSnapButton.vue'
 import Footer from '@/components/Footer.vue'
 
+type Network = 'ETH' | 'BTC' | 'SOL';
+
 // Reactive variables
 const address = ref('')
 const emojiiRepresentation = ref('')
 const error = ref('')
-const selectedNetwork = ref('ETH') // Default network
+const selectedNetwork = ref<Network>('ETH') // Default network
 const validateChecksum = ref(true) // Checkbox state (default selected)
 const theme = ref('light') // Light/Dark theme toggle
 
@@ -44,7 +46,7 @@ const validateAndComputeChecksum = async (): Promise<void> => {
       validateChecksum.value,
       false // Do not skip validation
     )
-  } catch (e) {
+  } catch (e: any) {
     error.value = e.message || 'An unexpected error occurred 😢'
     emojiiRepresentation.value = ''
   }

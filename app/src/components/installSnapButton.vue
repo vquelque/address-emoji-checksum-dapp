@@ -32,7 +32,7 @@ const installSnap = async () => {
     })
 
     alert('Snap successfully installed!')
-  } catch (error) {
+  } catch (error: any) {
     alert(`Failed to install Snap: ${error.message}`)
   }
 }
