@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
+import { ref, watchEffect, onMounted } from 'vue'
 import { generateEmojiChecksum, validateAddress } from 'address-emoji-checksum'
 import InstallSnapButton from '@/components/InstallSnapButton.vue'
 import Footer from '@/components/Footer.vue'
@@ -16,6 +16,12 @@ const theme = ref('light') // Light/Dark theme toggle
 
 // Network options
 const networkOptions = ['ETH', 'BTC', 'SOL'] // Supported networks
+
+const detectSystemTheme = () => {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+  theme.value = prefersDark ? 'dark' : 'light'
+  document.documentElement.className = theme.value
+}
 
 /**
  * Validate the address based on the selected network.
@@ -67,6 +73,11 @@ const toggleTheme = () => {
   theme.value = theme.value === 'light' ? 'dark' : 'light'
   document.documentElement.className = theme.value
 }
+
+// Set system theme on mount
+onMounted(() => {
+  detectSystemTheme()
+})
 </script>
 
 <template>
