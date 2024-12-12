@@ -4,7 +4,7 @@ import { generateEmojiChecksum, validateAddress } from 'address-emoji-checksum'
 import InstallSnapButton from '@/components/InstallSnapButton.vue'
 import Footer from '@/components/Footer.vue'
 
-type Network = 'ETH' | 'BTC' | 'SOL';
+type Network = 'ETH' | 'BTC' | 'SOL'
 
 // Reactive variables
 const address = ref('')
