@@ -84,7 +84,7 @@ const toggleTheme = () => {
         </button>
       </header>
       <div class="max-w-xl w-full px-4">
-        <p class="text-4xl font-bold mb-6 text-center">Address Emoji Checksum</p>
+        <p class="text-4xl font-bold mb-6 text-center">Address Emoji Checksum 😜</p>
         <div class="flex items-center mb-4">
           <!-- Network Selector -->
           <select
